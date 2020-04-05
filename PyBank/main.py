@@ -14,9 +14,10 @@ revenue_change = [] #list to store the revenue change of each month
 
 with open (csv_path) as csv_file:
     reader = csv.reader(csv_file, delimiter = ",")
-    csv_header = next(reader) #skip the header for the 'for loop'
+    next(reader) #skip the very first row of the file '<<<<<<< HEAD'
+    next(reader) #skip the header for the 'for loop'
     for row in reader:
-        if row == csv_header: #this prevents the 'for loop' of continuing with the repeated table
+        if len(row) < 2: #prevent the 'for loop' of continuing after reaching a row with different format
             break
         else:
             if not(row[0] in month_count): #evaluates the current month with the list 'month_count'
