@@ -1,4 +1,4 @@
-# pyhton-challenge
+# python-challenge
 
 The current challenge contains two projects:
 
